@@ -8,6 +8,8 @@ import PostDetails from "./components/PostDetails";
 import PrivateRoute from "./components/PrivateRoute";
 import Navbar from "./components/Navbar";
 
+import UserDetail from "./components/UserDetail";
+
 import "./App.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap/dist/js/bootstrap.min.js";
@@ -62,33 +64,35 @@ function App() {
   return (
     <>
       <div className="App container">
-      <Navbar />
-      <header className="App-header">
-      <h1>Welcome to My React Blog App</h1>
-      
-      <div className="container mt-3">
-        <Routes>
-          <Route path="/" element={<PostList />} />
-          <Route path="/post/:id" element={<PostDetails />} />
-          <Route
-            path="/new"
-            element={
-              <PrivateRoute>
-                <PostForm />
-              </PrivateRoute>
-            }
-          />
-          <Route
-            path="/edit/:id"
-            element={
-              <PrivateRoute>
-                <PostForm />
-              </PrivateRoute>
-            }
-          />
-        </Routes>
-      </div>
-       
+        <Navbar />
+        <header className="App-header">
+          <h1>Welcome to My React Blog App</h1>
+
+          <div className="container mt-3">
+            <Routes>
+              <Route path="/" element={<PostList />} />
+              <Route path="/post/:id" element={<PostDetails />} />
+
+              <Route path="/users/:userId" element={<UserDetail />} />
+
+              <Route
+                path="/new"
+                element={
+                  <PrivateRoute>
+                    <PostForm />
+                  </PrivateRoute>
+                }
+              />
+              <Route
+                path="/edit/:id"
+                element={
+                  <PrivateRoute>
+                    <PostForm />
+                  </PrivateRoute>
+                }
+              />
+            </Routes>
+          </div>
 
           <div className="mb-3">
             <input
@@ -152,8 +156,6 @@ function App() {
           </button>
         </header>
       </div>
-
-     
     </>
   );
 }

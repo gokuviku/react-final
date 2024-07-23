@@ -1,0 +1,100 @@
+{
+  "users": [
+    {
+      "id": 1,
+      "name": "John Doe",
+      "email": "john@example.com",
+      "password": "hashed_password",
+      "favorites": [1, 2]
+    },
+    {
+      "id": 2,
+      "name": "Jane Smith",
+      "email": "jane@example.com",
+      "password": "hashed_password",
+      "favorites": [2, 3]
+    }
+  ],
+  "recipes": [
+    {
+      "id": 1,
+      "title": "Spaghetti Carbonara",
+      "description": "A classic Italian pasta dish made with eggs, cheese, pancetta, and pepper.",
+      "ingredients": [1, 2, 3, 4],
+      "instructions": [
+        "Cook the spaghetti according to the package instructions.",
+        "In a separate bowl, whisk together the eggs and cheese.",
+        "Cook the pancetta in a pan until crispy.",
+        "Combine the spaghetti, pancetta, and egg mixture, and season with pepper."
+      ],
+      "category": 1,
+      "user_id": 1
+    },
+    {
+      "id": 2,
+      "title": "Chicken Curry",
+      "description": "A spicy and flavorful chicken curry with coconut milk.",
+      "ingredients": [5, 6, 7, 8],
+      "instructions": [
+        "Cook the chicken in a pan until browned.",
+        "Add the onions, garlic, and spices, and cook until fragrant.",
+        "Pour in the coconut milk and simmer until the chicken is cooked through.",
+        "Serve with rice."
+      ],
+      "category": 2,
+      "user_id": 2
+    }
+  ],
+  "ingredients": [
+    {
+      "id": 1,
+      "name": "Spaghetti",
+      "quantity": "200g"
+    },
+    {
+      "id": 2,
+      "name": "Eggs",
+      "quantity": "4"
+    },
+    {
+      "id": 3,
+      "name": "Pecorino Romano cheese",
+      "quantity": "100g"
+    },
+    {
+      "id": 4,
+      "name": "Pancetta",
+      "quantity": "150g"
+    },
+    {
+      "id": 5,
+      "name": "Chicken breast",
+      "quantity": "500g"
+    },
+    {
+      "id": 6,
+      "name": "Onions",
+      "quantity": "2"
+    },
+    {
+      "id": 7,
+      "name": "Garlic cloves",
+      "quantity": "3"
+    },
+    {
+      "id": 8,
+      "name": "Coconut milk",
+      "quantity": "400ml"
+    }
+  ],
+  "categories": [
+    {
+      "id": 1,
+      "name": "Italian"
+    },
+    {
+      "id": 2,
+      "name": "Indian"
+    }
+  ]
+}

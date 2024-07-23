@@ -1,26 +1,36 @@
-// Reducer.js
-import { add, del, edit, get } from './action';
+// reducer.js
 
-const initialState = [];
+const initialState = {
+  items: []
+};
 
-const reducer = (state = initialState, action) => {
+const rootReducer = (state = initialState, action) => {
   switch (action.type) {
-    case add:
-      return [...state, action.payload];
-
-    case del:
-      return state.filter((_, index) => index !== action.payload);
-
-    case edit:
-      return state.map((item, index) =>
-        index === action.payload.index ? action.payload.newItem : item
-      );
-    case get:
-      return state.map((item, index) => null)
-      
+    case "add":
+      return {
+        ...state,
+        items: [...state.items, action.payload]
+      };
+    case "delete":
+      return {
+        ...state,
+        items: state.items.filter((_, index) => index !== action.payload)
+      };
+    case "edit":
+      return {
+        ...state,
+        items: state.items.map((item, index) => 
+          index === action.payload.index ? action.payload.newItem : item
+        )
+      };
+    case "get":
+      return {
+        ...state,
+        currentItem: state.items[action.payload]
+      };
     default:
       return state;
   }
 };
 
-export default reducer;
+export default rootReducer;
